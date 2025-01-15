@@ -41,3 +41,39 @@ SELECT author, title, price FROM book WHERE amount < 10
 SELECT author, title, price
 FROM book
 WHERE (price < 500 or price > 600) and price*amount >=5000;
+
+SELECT title, author
+FROM book
+WHERE (price BETWEEN 540.5 AND 800) AND (amount = 2 OR amount = 3 OR amount = 5 OR amount = 7)
+
+SELECT title, author, price
+FROM book
+ORDER BY title;
+
+SELECT author, title, amount AS Количество
+FROM book
+WHERE price < 750
+ORDER BY author, amount DESC;
+
+SELECT author, title
+FROM book
+WHERE amount BETWEEN 2 and 14
+ORDER BY author DESC , title;
+
+
+SELECT title
+FROM book
+WHERE title LIKE 'Б%';
+/* эквивалентное условие
+title LIKE 'б%'
+*/
+
+SELECT title FROM book
+WHERE title LIKE "_____"
+
+SELECT title FROM book
+WHERE title LIKE "______%";
+/* эквивалентные условия
+title LIKE "%______"
+title LIKE "%______%"
+*/
