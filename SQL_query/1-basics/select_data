@@ -77,3 +77,11 @@ WHERE title LIKE "______%";
 title LIKE "%______"
 title LIKE "%______%"
 */
+
+SELECT title FROM book
+WHERE title NOT LIKE "% %";
+
+SELECT title, author
+  FROM book
+  WHERE TRIM(title) LIKE "%_ _%" AND author LIKE "%С.%"
+  ORDER BY title ASC
