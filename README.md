@@ -1,5 +1,5 @@
-mysql -u root -p
+mysql -u root -p  
 
-SHOW DATABASES;
-CREATE DATABASE DB;
-USE DB;
+SHOW DATABASES;  
+CREATE DATABASE DB;  
+USE DB;  
