@@ -1,3 +1,4 @@
+// Создание таблицы
 CREATE TABLE book(
     book_id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(50),
