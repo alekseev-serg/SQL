@@ -38,3 +38,23 @@ GROUP BY author;
 SELECT author, MIN(price) as Минимальная_цена, MAX(price) as Максимальная_цена, AVG(price) as Средняя_цена
 FROM book
 GROUP BY author;
+
+-- Вывести суммарную стоимость книг каждого автора.
+SELECT author, SUM(price * amount) AS Стоимость
+FROM book
+GROUP BY author;
+
+-- Найти среднюю цену книг каждого автора.
+SELECT author, ROUND(AVG(price), 2)
+FROM book
+GROUP BY author;
+
+# Для каждого автора вычислить суммарную стоимость книг S (имя столбца Стоимость), а также вычислить налог
+# на добавленную стоимость  для полученных сумм (имя столбца НДС ) , который включен в стоимость и составляет 18% (k=18),
+# а также стоимость книг  (Стоимость_без_НДС) без него. Значения округлить до двух знаков после запятой.
+SELECT author,
+       SUM(price * amount)                                            as Стоимость,
+       ROUND(SUM(price * amount) * 18 / 118, 2)                       as НДС,
+       ROUND(SUM(price * amount) - SUM(price * amount) * 18 / 118, 2) as Стоимость_без_НДС
+FROM book
+GROUP BY author;
