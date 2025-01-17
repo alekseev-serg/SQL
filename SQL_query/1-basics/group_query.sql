@@ -32,3 +32,9 @@ GROUP BY author;
 SELECT author, MIN(price) as min_price
 FROM book
 GROUP BY author;
+
+-- Вывести фамилию и инициалы автора, минимальную, максимальную и среднюю цену книг каждого автора.
+-- Вычисляемые столбцы назвать Минимальная_цена, Максимальная_цена и Средняя_цена соответственно.
+SELECT author, MIN(price) as Минимальная_цена, MAX(price) as Максимальная_цена, AVG(price) as Средняя_цена
+FROM book
+GROUP BY author;
